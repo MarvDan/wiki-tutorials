@@ -5,8 +5,8 @@ name: CI
 
 on:
   repository_dispatch:
-    types: open
-    #types: [dispatch-katacoda-scenarios]
+    #types: open
+    types: [dispatch-katacoda-scenarios]
     
   #workflow_dispatch:
 jobs:
