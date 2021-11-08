@@ -1,10 +1,13 @@
 name: CI
 
 on:
-  repository_dispatch:
-    types: [dispatch-katacoda-scenarios]
+  pull_request
+
+#on:
+  #repository_dispatch:
+    #types: [dispatch-katacoda-scenarios]
     
-  workflow_dispatch:
+  #workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
