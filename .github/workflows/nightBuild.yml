@@ -1,8 +1,8 @@
 name: CI
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
+  #schedule:
+    #- cron: "0 0 * * *"
   
   workflow_dispatch:
 jobs:
@@ -30,4 +30,7 @@ jobs:
         run: npm install
 
       - name: run buildRun.sh
-        run: sh buildRun.sh
+        run: |
+              pwd
+              ls
+              sh buildRun.sh
