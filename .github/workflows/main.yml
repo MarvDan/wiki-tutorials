@@ -54,18 +54,6 @@ jobs:
         run: |
               pwd
               ls
-              cd ../
-              pwd
-              ls
-              cd ../
-              pwd 
-              ls 
-              cd ../
-              pwd
-              ls
-              cd ../
-              pwd 
-              ls
               #cd devonfw-tutorials/tutorial-compiler
               cd engine
               
