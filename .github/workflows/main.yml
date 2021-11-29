@@ -58,7 +58,7 @@ jobs:
               pwd
               ls
               cd ../
-              pdw 
+              pwd 
               ls 
               cd ../
               pwd
