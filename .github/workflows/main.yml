@@ -48,6 +48,19 @@ jobs:
       - name: npm install
         run: npm install
         
+        #TEST#
+        
+      - name: getParser
+        run: |
+              pwd
+              ls
+              cd devonfw-tutorials/tutorial-compiler
+              cd engine
+              
+              npx tsc -t es5 parser.ts
+              
+              pwd
+              ls
 
       - name: run buildRun.sh
         run: sh buildRun.sh -e wiki_eclipse -e wiki_vscode -p ${{ github.event.client_payload.tutorial }}
