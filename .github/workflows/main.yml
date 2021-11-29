@@ -55,7 +55,8 @@ jobs:
               pwd
               ls
               cd engine
-              pwd ls
+              pwd 
+              ls
               
               npx tsc -t es5 parser.ts
               
