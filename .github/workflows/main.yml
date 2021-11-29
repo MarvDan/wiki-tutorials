@@ -54,8 +54,8 @@ jobs:
         run: |
               pwd
               ls
-              #cd devonfw-tutorials/tutorial-compiler
               cd engine
+              pwd ls
               
               npx tsc -t es5 parser.ts
               
