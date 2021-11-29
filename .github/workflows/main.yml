@@ -58,6 +58,7 @@ jobs:
               pwd 
               ls
               
+              npm install typescript
               npx tsc -t es5 parser.ts
               
               pwd
