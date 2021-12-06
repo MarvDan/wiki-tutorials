@@ -6,6 +6,8 @@ for dir in */; do SPECIFIED_TUTORIALS+=("${dir::-1}"); done
 echo "SPECIFIED_TUTORIALS:\n"
 printf "%s\n" "${SPECIFIED_TUTORIALS[@]}"
 # switches to tutorials repository https://github.com/devonfw-tutorials/tutorials
+
+mkdir -p tutorials 
 cd ../repo/tutorials
 ONLINE_TUTORIALS=()
 for dir in */; do ONLINE_TUTORIALS+=("${dir::-1}"); done
@@ -13,8 +15,7 @@ echo "ONLINE_TUTORIALS:\n"
 printf "%s\n" "${ONLINE_TUTORIALS[@]}"
 
 # delete tutorials, which are not specified anymore
-for tutorial in "${ONLINE_TUTORIALS[@]}"
-do
+for tutorial in "${ONLINE_TUTORIALS[@]}"; do
   if [[ ! " ${SPECIFIED_TUTORIALS[@]} " =~ " ${tutorial} " ]]; then
       rm -rf "${tutorial}"
       echo "deleted ${tutorial} as not specified anymore in tutorials repository"
@@ -31,15 +32,13 @@ printf "%s\n" "${GENERATED_TUTORIALS[@]}"
 cd ../../..
 
 # delete tutorials, which are newly generated
-for tutorial in "${ONLINE_TUTORIALS[@]}"
-do
+for tutorial in "${ONLINE_TUTORIALS[@]}"; do
   if [[ ! " ${GENERATED_TUTORIALS[@]} " =~ " ${tutorial} " ]]; then
       rm -rf repo/"${tutorial}"
       echo "deleted ${tutorial} as this is up to be replaced by the build"
   fi
 done
 
-mkdir -p tutorials 
 #copy all files from * in repo/tutorials (https://github.com/devonfw-tutorials/wiki-tutorials/tutorials)
 cp -r build/output/wiki/*/ repo/tutorials
 cd repo/
